@@ -10,8 +10,6 @@ int main()
     int num_of_patients; 
     char num_of_sets;
     cin >> num_of_patients;
-    //for (int i = 1; i <= num_of_patients; i++)
-    //{
         if (inputFile.is_open())
         {
             while (getline(inputFile,line))
@@ -37,6 +35,5 @@ int main()
         }
         inputFile.close();
 
-    //}
     return 0;
 }
