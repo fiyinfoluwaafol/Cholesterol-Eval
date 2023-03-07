@@ -12,8 +12,8 @@ string num_of_sets;
 
 //Prototypes for Functions
 float HDL_LDL_ratio(int HLevels, int Llevels);
-void evaluate_cholesterol(int HLevels, int Llevels, string& placeholder1, string& placeholder2);
-void evaluate_blood_pressure(int syst, int dias, string& placeholder1, string& placeholder2);
+void evaluate_cholesterol(int HLevels, int Llevels, string &placeholder1, string &placeholder2);
+void evaluate_blood_pressure(int syst, int dias, string &placeholder1, string &placeholder2);
 
 int main()
 {
@@ -79,7 +79,7 @@ float HDL_LDL_ratio(int HLevels, int Llevels)
  * @param placeholder2 parameter description
  * @version 1.0
  */
-void evaluate_cholesterol(int HLevels, int Llevels, string& placeholder1, string& placeholder2)
+void evaluate_cholesterol(int HLevels, int Llevels, string &placeholder1, string &placeholder2)
 {
 
 }
@@ -94,7 +94,7 @@ void evaluate_cholesterol(int HLevels, int Llevels, string& placeholder1, string
  * @param placeholder2 parameter description
  * @version 1.0
  */
-void evaluate_blood_pressure(int syst, int dias, string& placeholder1, string& placeholder2)
+void evaluate_blood_pressure(int syst, int dias, string &placeholder1, string &placeholder2)
 {
 
 }
