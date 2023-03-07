@@ -15,8 +15,8 @@ int main()
     cin >> num_of_patients;
     if (inputFile)
     {
-        //for (int i = 0; i < num_of_patients; i++)
-        //{
+        for (int i = 0; i < num_of_patients; i++)
+        {
             getline(inputFile,patient_name,' ');
             inputFile.ignore(2,' ');
             getline(inputFile,num_of_sets);
@@ -36,10 +36,9 @@ int main()
                 cout << "This patient's diastolic is " << diastolic << endl;
                 cout << "\n";
             }
-        //}
+        }
     }
         
-       // }
     inputFile.close();
     return 0;
 }
