@@ -66,7 +66,7 @@ int main()
     {
         cout << "Ran into an error in attempting to read from the input file. Check that the input file exists." << endl;
     }
-        //Testing out SSH keys with GitHub
+        
     return 0;
 }
 
