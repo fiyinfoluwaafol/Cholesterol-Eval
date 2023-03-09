@@ -118,5 +118,44 @@ void evaluate_cholesterol(int HLevels, int Llevels, string& string_HDL, string& 
  */
 void evaluate_blood_pressure(int syst, int dias, string& string_syst, string& string_dias)
 {
+  if (syst < 120){
+    cout << "Optimal" << endl;
+  }
+  else if (syst < 130){
+    cout << "Normal" << endl;
+  }
+  else if (syst < 140){
+    cout << "Normal high" << endl;
+  }
+  else if (syst < 160){
+    cout << "Stage 1 hypertension" << endl;
+  }
+  else if (syst < 180){
+    cout << "Stage 2 hypertension" << endl;
+  }
+  else {
+    cout << "Stage 3 hypertenstion" << endl;
+  }
 
+
+
+
+  if (dias < 80){
+    cout << "Optimal" << endl;
+  }
+  else if (dias < 85){
+    cout << "Normal" << endl;
+  }
+  else if (dias < 90){
+    cout << "High normal" << endl;
+  }
+  else if (dias < 100){
+    cout << "Stage 1 hypertension" << endl;
+  }
+  else if (dias < 110){
+    cout << "Stage 2 hypertension" << endl;
+  }
+  else {
+    cout << "Stage 3 hypertenstion" << endl;
+  }
 }
