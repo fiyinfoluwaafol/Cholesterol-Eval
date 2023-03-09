@@ -83,10 +83,10 @@ float HDL_LDL_ratio(int HLevels, int Llevels)
 {
     float ratio = float(HLevels)/float(Llevels); //intialzing ratio variable and setting it equal to the ratio HDL/LDL
     if (ratio <= 0.3){
-        cout << "This ratio is not good." << endl; //ratio is considered "not good" if it is less than or equal to 0.3
+        cout << "Ratio of HDL to LDL is not good" << endl; //ratio is considered "not good" if it is less than or equal to 0.3
     } 
     else if (ratio > 0.3){
-        cout << "This ratio is good." << endl; //ratio is considered "good" if it is greater than 0.3
+        cout << "Ratio of HDL to LDL is good" << endl; //ratio is considered "good" if it is greater than 0.3
     }
     return ratio; //return ratio (function requires a return data type of float)
 }
