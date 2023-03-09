@@ -144,21 +144,21 @@ void evaluate_blood_pressure(int syst, int dias, string& string_syst, string& st
 
 
   if (dias < 80){
-    cout << "Diastolic reading is Optimal" << endl;
+    cout << "Diastolic reading is Optimal" << endl; //Diastolic is "optimal" if it is below 80
   }
   else if (dias < 85){
-    cout << "Diastolic reading is Normal" << endl;
+    cout << "Diastolic reading is Normal" << endl; //Diastolic is "normal" if it is below 85
   }
   else if (dias < 90){
-    cout << "Diastolic reading is High normal" << endl;
+    cout << "Diastolic reading is High normal" << endl; //Diastolic is "High normal" if it is below 90
   }
   else if (dias < 100){
-    cout << "Diastolic reading is Stage 1 hypertension" << endl;
+    cout << "Diastolic reading is Stage 1 hypertension" << endl; //Diastolic is "stage 1 hypertension" if it is below 100
   }
   else if (dias < 110){
-    cout << "Diastolic reading is Stage 2 hypertension" << endl;
+    cout << "Diastolic reading is Stage 2 hypertension" << endl; //Diastolic is "stage 2 hypertension" if it is below 110
   }
   else {
-    cout << "Diastolic reading is Stage 3 hypertenstion" << endl;
+    cout << "Diastolic reading is Stage 3 hypertenstion" << endl; //Diastolic is "stage 3 hypertension" if it is above or equal to 110
   }
 }
