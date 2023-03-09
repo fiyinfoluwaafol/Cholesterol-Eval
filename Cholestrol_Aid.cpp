@@ -62,7 +62,7 @@ int main()
         }
         inputFile.close();
     }
-    else //If input file object is in a fail state, it runs to an error, and prints to the screen that an erro was encountered
+    else //If input file object is in a fail state, it runs to an error, and prints to the screen that an error was encountered
     {
         cout << "Ran into an error in attempting to read from the input file. Check that the input file exists." << endl;
     }
@@ -95,13 +95,13 @@ float HDL_LDL_ratio(int HLevels, int Llevels)
  * This function does
  * 
  * @author FirstName LastName
- * @param HLevels parameter description
- * @param Llevels parameter description
- * @param placeholder1 parameter description
- * @param placeholder2 parameter description
+ * @param HLevels HDL reading for a given patient -> Refers to the integer casted value of value1
+ * @param Llevels LDL reading for a given patient -> Refers to the integer casted value of value2
+ * @param string_HDL HDL value read directly from the file -> Refers to the variable value1
+ * @param string_LDL LDL value read directly from the file -> Refers to the variable value2
  * @version 1.0
  */
-void evaluate_cholesterol(int HLevels, int Llevels, string &placeholder1, string &placeholder2)
+void evaluate_cholesterol(int HLevels, int Llevels, string& string_HDL, string& string_LDL)
 {
 
 }
@@ -110,13 +110,13 @@ void evaluate_cholesterol(int HLevels, int Llevels, string &placeholder1, string
  * This function does
  * 
  * @author FirstName LastName
- * @param syst parameter description
- * @param dias parameter description
- * @param placeholder1 parameter description
- * @param placeholder2 parameter description
+ * @param syst systolic reading for a given patient -> Refers to the integer casted value of value3
+ * @param dias diastolic reading for a given patient -> Refers to the integer casted value of value4
+ * @param string_syst Systolic value read directly from the file -> Refers to the variable value3
+ * @param string_dias Diastolic value read directly from the file -> Refers to the variable value4
  * @version 1.0
  */
-void evaluate_blood_pressure(int syst, int dias, string &placeholder1, string &placeholder2)
+void evaluate_blood_pressure(int syst, int dias, string& string_syst, string& string_dias)
 {
 
 }
