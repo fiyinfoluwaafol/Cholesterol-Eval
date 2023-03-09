@@ -118,44 +118,47 @@ void evaluate_cholesterol(int HLevels, int Llevels, string& string_HDL, string& 
  */
 void evaluate_blood_pressure(int syst, int dias, string& string_syst, string& string_dias)
 {
+   //TODO: Consider how to use the string placeholders string& string_syst and string& string_dias
+   //Fiyin suggested that the two placeholders could be for the values read directly from the file
+   //Maybe in the comparison statements we use the string placeholders instead?
   if (syst < 120){
-    cout << "Optimal" << endl;
+    cout << "Optimal" << endl; //blood pressure is "optimal" if systolic value is below 120
   }
   else if (syst < 130){
-    cout << "Normal" << endl;
+    cout << "Systolic reading is Normal" << endl; //"normal" if systolic is below 130
   }
   else if (syst < 140){
-    cout << "Normal high" << endl;
+    cout << "Systolic reading is Normal high" << endl; //"normal high" if systolic is below 140
   }
   else if (syst < 160){
-    cout << "Stage 1 hypertension" << endl;
+    cout << "Systolic reading is Stage 1 hypertension" << endl; //"stage 1 hypertension" if systolic is below 160
   }
   else if (syst < 180){
-    cout << "Stage 2 hypertension" << endl;
+    cout << "Systolic reading is Stage 2 hypertension" << endl; //"stage 2 hypertension" if systolic is below 180
   }
   else {
-    cout << "Stage 3 hypertenstion" << endl;
+    cout << "Systolic reading is Stage 3 hypertenstion" << endl; //if systolic is greater than or equal to 180, "stage 3 hypertenstion"
   }
 
-
+   
 
 
   if (dias < 80){
-    cout << "Optimal" << endl;
+    cout << "Diastolic reading is Optimal" << endl;
   }
   else if (dias < 85){
-    cout << "Normal" << endl;
+    cout << "Diastolic reading is Normal" << endl;
   }
   else if (dias < 90){
-    cout << "High normal" << endl;
+    cout << "Diastolic reading is High normal" << endl;
   }
   else if (dias < 100){
-    cout << "Stage 1 hypertension" << endl;
+    cout << "Diastolic reading is Stage 1 hypertension" << endl;
   }
   else if (dias < 110){
-    cout << "Stage 2 hypertension" << endl;
+    cout << "Diastolic reading is Stage 2 hypertension" << endl;
   }
   else {
-    cout << "Stage 3 hypertenstion" << endl;
+    cout << "Diastolic reading is Stage 3 hypertenstion" << endl;
   }
 }
