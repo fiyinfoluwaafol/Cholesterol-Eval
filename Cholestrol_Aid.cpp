@@ -22,7 +22,7 @@ int main()
 {
     cout << "Enter the number of patient records: ";
     cin >> num_of_patients; // Asks user for the number of patient records to be evaluated
-
+    cout << "\n" << endl;
     if (inputFile) //Checks to see whether the input file object is open and ready to be read from
     {
         //Outer loop iterates through each patient's records, so that it can read their names and their set(s) of readings accordingly from the file
@@ -30,9 +30,9 @@ int main()
         {
             getline(inputFile,patient_name,' '); //For each iteration of the outer loop, it reads patient's name from the file
             inputFile.ignore(2,' '); //Ignores everything between Patient's name and the number of sets of readings for that patient
-            cout << "\n------------------------------\n\n";
             getline(inputFile,num_of_sets); //For each iteration of the outer loop, it reads the number of sets of readings for that patient
-            cout << "Current Patient's Name- " << patient_name << endl;
+            //cout << "\n------------------------------\n\n";
+            cout << "Current Patient's Name- " << patient_name << "\n" << endl;
             
             //Inner loop below, iterates through each line of sets of readings for a patient; so that it reads the HDL, LDL, systolic and diastolic values for each set.
             for (int j = 1; j <= stoi(num_of_sets); j++) //Used stoi() because num_of_sets is stored as a string but its integer value is needed at this point
@@ -50,14 +50,10 @@ int main()
 
                 cout << "DATA SET " << j << endl; //Prints to screen the current data set being evaluated
 
-                //TODO: Replace the below with the function calls for evaluation and interpretation of values
-                //      because the below was only used to test that the values were being read properly
-                cout << "This patient's HDL is " << HDL << endl;
-                cout << "This patient's LDL is " << LDL << endl;
-                cout << HDL_LDL_ratio(HDL,LDL) << " - This is the HDL to LDL ratio" << endl; //TODO: Remove function call, as this was only called to act as a functin stub for the HDL_LDL_ratio() function
-                cout << "This patient's systolic is " << systolic << endl;
-                cout << "This patient's diastolic is " << diastolic << endl;
-                cout << "\n";
+                //TODO: Call the evaluate_cholesterol() function, once it has been defined.
+                evaluate_cholesterol(HDL,LDL,value1,value2);
+                evaluate_blood_pressure(systolic,diastolic,value3,value4);
+                cout << "\n\n";
             }
         }
         inputFile.close();
@@ -103,13 +99,14 @@ float HDL_LDL_ratio(int HLevels, int Llevels)
  */
 void evaluate_cholesterol(int HLevels, int Llevels, string& string_HDL, string& string_LDL)
 {
-
+    cout << "This patient's HDL is " << HLevels << endl;
+    cout << "This patient's LDL is " << Llevels << endl;
 }
 
 /**
  * This function does
  * 
- * @author FirstName LastName
+ * @author Chase Adams
  * @param syst systolic reading for a given patient -> Refers to the integer casted value of value3
  * @param dias diastolic reading for a given patient -> Refers to the integer casted value of value4
  * @param string_syst Systolic value read directly from the file -> Refers to the variable value3
@@ -121,44 +118,46 @@ void evaluate_blood_pressure(int syst, int dias, string& string_syst, string& st
    //TODO: Consider how to use the string placeholders string& string_syst and string& string_dias
    //Fiyin suggested that the two placeholders could be for the values read directly from the file
    //Maybe in the comparison statements we use the string placeholders instead?
+    cout << "Blood Pressure Profile" << endl;
+    cout << "  Systolic: " + string_syst + " Diastolic: " + string_dias << endl;//This was what I proposed earlier
   if (syst < 120){
-    cout << "Optimal" << endl; //blood pressure is "optimal" if systolic value is below 120
+    cout << "  Systolic reading is Optimal" << endl; //blood pressure is "optimal" if systolic value is below 120
   }
   else if (syst < 130){
-    cout << "Systolic reading is Normal" << endl; //"normal" if systolic is below 130
+    cout << "  Systolic reading is Normal" << endl; //"normal" if systolic is below 130
   }
   else if (syst < 140){
-    cout << "Systolic reading is Normal high" << endl; //"normal high" if systolic is below 140
+    cout << "  Systolic reading is Normal high" << endl; //"normal high" if systolic is below 140
   }
   else if (syst < 160){
-    cout << "Systolic reading is Stage 1 hypertension" << endl; //"stage 1 hypertension" if systolic is below 160
+    cout << "  Systolic reading is Stage 1 hypertension" << endl; //"stage 1 hypertension" if systolic is below 160
   }
   else if (syst < 180){
-    cout << "Systolic reading is Stage 2 hypertension" << endl; //"stage 2 hypertension" if systolic is below 180
+    cout << "  Systolic reading is Stage 2 hypertension" << endl; //"stage 2 hypertension" if systolic is below 180
   }
   else {
-    cout << "Systolic reading is Stage 3 hypertenstion" << endl; //if systolic is greater than or equal to 180, "stage 3 hypertenstion"
+    cout << "  Systolic reading is Stage 3 hypertenstion" << endl; //if systolic is greater than or equal to 180, "stage 3 hypertenstion"
   }
 
    
 
 
   if (dias < 80){
-    cout << "Diastolic reading is Optimal" << endl; //Diastolic is "optimal" if it is below 80
+    cout << "  Diastolic reading is Optimal" << endl; //Diastolic is "optimal" if it is below 80
   }
   else if (dias < 85){
-    cout << "Diastolic reading is Normal" << endl; //Diastolic is "normal" if it is below 85
+    cout << "  Diastolic reading is Normal" << endl; //Diastolic is "normal" if it is below 85
   }
   else if (dias < 90){
-    cout << "Diastolic reading is High normal" << endl; //Diastolic is "High normal" if it is below 90
+    cout << "  Diastolic reading is High normal" << endl; //Diastolic is "High normal" if it is below 90
   }
   else if (dias < 100){
-    cout << "Diastolic reading is Stage 1 hypertension" << endl; //Diastolic is "stage 1 hypertension" if it is below 100
+    cout << "  Diastolic reading is Stage 1 hypertension" << endl; //Diastolic is "stage 1 hypertension" if it is below 100
   }
   else if (dias < 110){
-    cout << "Diastolic reading is Stage 2 hypertension" << endl; //Diastolic is "stage 2 hypertension" if it is below 110
+    cout << "  Diastolic reading is Stage 2 hypertension" << endl; //Diastolic is "stage 2 hypertension" if it is below 110
   }
   else {
-    cout << "Diastolic reading is Stage 3 hypertenstion" << endl; //Diastolic is "stage 3 hypertension" if it is above or equal to 110
+    cout << "  Diastolic reading is Stage 3 hypertenstion" << endl; //Diastolic is "stage 3 hypertension" if it is above or equal to 110
   }
 }
