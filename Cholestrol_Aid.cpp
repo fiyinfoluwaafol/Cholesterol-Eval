@@ -103,15 +103,15 @@ void evaluate_cholesterol(int HLevels, int Llevels, string& string_HDL, string& 
     cout << "This patient's HDL is " << HLevels << endl; 
     cout << "This patient's LDL is " << Llevels << endl;
     
-  if (HDL < 1)
+  if (HLevels < 1)
   {
     cout << "very low - Do you want to double-check the data?" << endl; //checking if patient data was wrong (unexpected number)
   }  
-  else if (HDL < 40) 
+  else if (Hlevels < 40) 
   {  
     cout << "HDL is too low" << endl; //HDL is too low if it is below 40
   }
-  else if (HDL < 60)
+  else if (Hlevels < 60)
   {
     cout << "HDL is Okay" << endl; //HDL is okay if it is below 60
   }
@@ -123,22 +123,28 @@ void evaluate_cholesterol(int HLevels, int Llevels, string& string_HDL, string& 
    
    
   
-  if (LDL < 1){
+  if (Llevels < 1)
+  {
     cout << "very low - Do you want to double-check the data?" << endl;  //checking if patient data was wrong (unexpected number)
   }  
-  else if (LDL < 100 ) {  
+  else if (Llevels < 100 ) 
+  {  
     cout << "LDL is Optimal" << endl; //LDL is opitmal if it is below 100
   }
-  else if (LDL < 130) {
+  else if (Llevels < 130) 
+  {
     cout << "LDL is Near Optimal" << endl; //LDL is near optimal if it is below 130
   }
-  else if (LDL < 160) {
+  else if (Llevels < 160) 
+  {
     cout << "LDL is Boderline High" << endl; //LDL is borderline high if it is below 160
   }
-  else if (LDL < 190) {
+  else if (Llevels < 190) 
+  {
     cout << "LDL is High" << endl; //LDL is high if it is below 190
   }
-  else {
+  else 
+  {
     cout << "LDL is Very High" << endl; //LDL is very high if it is at or above 190
   }
     
