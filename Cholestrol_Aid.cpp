@@ -1,6 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <iomanip>
 using namespace std;
 
 ifstream inputFile("infile.txt"); //Initialization of input file stream object that would be read from for this program
@@ -50,7 +51,7 @@ int main()
 
                 cout << "DATA SET " << j << endl; //Prints to screen the current data set being evaluated
 
-                //TODO: Call the evaluate_cholesterol() function, once it has been defined.
+                //Calls the functions that carry out the actual evaluation of the data read from the input file
                 evaluate_cholesterol(HDL,LDL,value1,value2);
                 evaluate_blood_pressure(systolic,diastolic,value3,value4);
                 cout << "\n\n";
@@ -78,12 +79,6 @@ int main()
 float HDL_LDL_ratio(int HLevels, int Llevels)
 {
     float ratio = float(HLevels)/float(Llevels); //intialzing ratio variable and setting it equal to the ratio HDL/LDL
-    if (ratio <= 0.3){
-        cout << "Ratio of HDL to LDL is not good" << endl; //ratio is considered "not good" if it is less than or equal to 0.3
-    } 
-    else if (ratio > 0.3){
-        cout << "Ratio of HDL to LDL is good" << endl; //ratio is considered "good" if it is greater than 0.3
-    }
     return ratio; //return ratio (function requires a return data type of float)
 }
 
@@ -102,12 +97,12 @@ void evaluate_cholesterol(int HLevels, int Llevels, string& string_HDL, string& 
 {
     cout << "Cholesterol Profile" << endl;
     cout << "  HDL: " + string_HDL + " LDL: " + string_LDL << endl; //printing to the screen the patient's HDL and LDL levels using the string pointers
-    //cout << "This patient's HDL is " << HLevels << endl; 
-    //cout << "This patient's LDL is " << Llevels << endl;
+    float H_L_ratio = HDL_LDL_ratio(HLevels,Llevels);
+    cout << "  Ratio: " << fixed << setprecision(4) << HDL_LDL_ratio(HLevels,Llevels) << endl;
     
   if (HLevels < 1)
   {
-    cout << "  very low - Do you want to double-check the data?" << endl; //checking if patient data was wrong (unexpected number)
+    cout << "  LDL is very low - Do you want to double-check the data?" << endl; //checking if patient data was wrong (unexpected number)
   }  
   else if (HLevels < 40) 
   {  
@@ -127,7 +122,7 @@ void evaluate_cholesterol(int HLevels, int Llevels, string& string_HDL, string& 
   
   if (Llevels < 1)
   {
-    cout << "  very low - Do you want to double-check the data?" << endl;  //checking if patient data was wrong (unexpected number)
+    cout << "  LDL is very low - Do you want to double-check the data?" << endl;  //checking if patient data was wrong (unexpected number)
   }  
   else if (Llevels < 100 ) 
   {  
@@ -149,7 +144,14 @@ void evaluate_cholesterol(int HLevels, int Llevels, string& string_HDL, string& 
   {
     cout << "  LDL is Very High" << endl; //LDL is very high if it is at or above 190
   }
-  //HDL_LDL_ratio(HLevels, Llevels);
+  
+  
+  if (H_L_ratio <= 0.3) {
+        cout << "  Ratio of HDL to LDL is not good" << endl; //ratio is considered "not good" if it is less than or equal to 0.3
+    } 
+    else if (H_L_ratio > 0.3){
+        cout << "  Ratio of HDL to LDL is good" << endl; //ratio is considered "good" if it is greater than 0.3
+    }
     
     
     
@@ -168,9 +170,6 @@ void evaluate_cholesterol(int HLevels, int Llevels, string& string_HDL, string& 
  */
 void evaluate_blood_pressure(int syst, int dias, string& string_syst, string& string_dias)
 {
-   //TODO: Consider how to use the string placeholders string& string_syst and string& string_dias
-   //Fiyin suggested that the two placeholders could be for the values read directly from the file
-   //Maybe in the comparison statements we use the string placeholders instead?
     cout << "Blood Pressure Profile" << endl;
     cout << "  Systolic: " + string_syst + " Diastolic: " + string_dias << endl;//This was what I proposed earlier
   if (syst < 120){
