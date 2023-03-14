@@ -88,7 +88,8 @@ float HDL_LDL_ratio(int HLevels, int Llevels)
 }
 
 /**
- * This function does
+ * This function evaluates the information relating to the cholesterol of a patient, such as
+ * their HDL and LDL values to give the interpretation of those values.
  * 
  * @author FirstName LastName
  * @param HLevels HDL reading for a given patient -> Refers to the integer casted value of value1
@@ -155,7 +156,8 @@ void evaluate_cholesterol(int HLevels, int Llevels, string& string_HDL, string& 
 }
 
 /**
- * This function does
+ * This function evaluates the information relating to the blood pressure of a patient, such as
+ * their systolic and diastolic values to give the interpretation of those values.
  * 
  * @author Chase Adams
  * @param syst systolic reading for a given patient -> Refers to the integer casted value of value3
@@ -191,7 +193,7 @@ void evaluate_blood_pressure(int syst, int dias, string& string_syst, string& st
   }
 
    
-
+   
 
   if (dias < 80){
     cout << "  Diastolic reading is Optimal" << endl; //Diastolic is "optimal" if it is below 80
