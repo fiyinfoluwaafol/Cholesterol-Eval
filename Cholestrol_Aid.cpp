@@ -32,7 +32,6 @@ int main()
             getline(inputFile,patient_name,' '); //For each iteration of the outer loop, it reads patient's name from the file
             inputFile.ignore(2,' '); //Ignores everything between Patient's name and the number of sets of readings for that patient
             getline(inputFile,num_of_sets); //For each iteration of the outer loop, it reads the number of sets of readings for that patient
-            //cout << "\n------------------------------\n\n";
             cout << "Current Patient's Name- " << patient_name << "\n" << endl;
             
             //Inner loop below, iterates through each line of sets of readings for a patient; so that it reads the HDL, LDL, systolic and diastolic values for each set.
