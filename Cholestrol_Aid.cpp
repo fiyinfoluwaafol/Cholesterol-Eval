@@ -32,6 +32,7 @@ int main()
             getline(inputFile,patient_name,' '); //For each iteration of the outer loop, it reads patient's name from the file
             inputFile.ignore(2,' '); //Ignores everything between Patient's name and the number of sets of readings for that patient
             getline(inputFile,num_of_sets); //For each iteration of the outer loop, it reads the number of sets of readings for that patient
+
             cout << "Current Patient's Name- " << patient_name << "\n" << endl;
             
             //Inner loop below, iterates through each line of sets of readings for a patient; so that it reads the HDL, LDL, systolic and diastolic values for each set.
@@ -85,7 +86,7 @@ float HDL_LDL_ratio(int HLevels, int Llevels)
  * This function evaluates the information relating to the cholesterol of a patient, such as
  * their HDL and LDL values to give the interpretation of those values.
  * 
- * @author FirstName LastName
+ * @author Chase Adams
  * @param HLevels HDL reading for a given patient -> Refers to the integer casted value of value1
  * @param Llevels LDL reading for a given patient -> Refers to the integer casted value of value2
  * @param string_HDL HDL value read directly from the file -> Refers to the variable value1
@@ -160,7 +161,7 @@ void evaluate_cholesterol(int HLevels, int Llevels, string& string_HDL, string& 
  * This function evaluates the information relating to the blood pressure of a patient, such as
  * their systolic and diastolic values to give the interpretation of those values.
  * 
- * @author Chase Adams
+ * @author Tatianna Davis
  * @param syst systolic reading for a given patient -> Refers to the integer casted value of value3
  * @param dias diastolic reading for a given patient -> Refers to the integer casted value of value4
  * @param string_syst Systolic value read directly from the file -> Refers to the variable value3
