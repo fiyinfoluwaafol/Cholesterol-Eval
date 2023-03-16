@@ -71,7 +71,7 @@ int main()
  * This function calculates the HDl to LDL ratio,
  * as well as print to the screen the interpretations of their values
  * 
- * @author Chase Adams
+ * @author Anverly Jones
  * @param HLevels HDL reading for a given patient
  * @param Llevels LDL reading for a given patient
  * @version 1.0
